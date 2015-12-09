@@ -1,0 +1,50 @@
+﻿@model ClientBibliotheque.ServiceReferenceBibliotheque.Auteur
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content">
+    <div class="col-lg-10 col-lg-offset-1 ">
+        <div class="text-center"> <h2>Suppréssion d'un auteur</h2></div>
+
+        <h3>Voulez vous vraiment supprimer ce film ?</h3>
+        <div>
+            <h4>Auteur : </h4>
+            <hr />
+            <div> class="dl-horizontal">
+                
+                <div> nom : 
+                    @Html.DisplayNameFor(model => model.nom)
+                </div>
+                <div> prénom :
+                    @Html.DisplayFor(model => model.prenom)
+                </div>
+
+                <div> email :
+                    @Html.DisplayNameFor(model => model.email)
+                </div>
+                <div> nationalité :
+                    @Html.DisplayNameFor(model => model.nationalite)
+                </div>
+                <div> sexe :
+                    @Html.DisplayFor(model => model.sexe)
+                </div>
+
+
+            </div>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+    <div class="clearfix"> </div>
+</div>
+
+

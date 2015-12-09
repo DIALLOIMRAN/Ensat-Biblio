@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="databaseModelStoreContainer" CdmEntityContainer="dbBibliotheque">
+    <EntitySetMapping Name="Auteur">
+      <EntityTypeMapping TypeName="databaseModel.Auteur">
+        <MappingFragment StoreEntitySet="Auteur">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="sexe" ColumnName="sexe" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="date_nais" ColumnName="date_nais" />
+          <ScalarProperty Name="apropos" ColumnName="apropos" />
+          <ScalarProperty Name="nationalite" ColumnName="nationalite" />
+          <ScalarProperty Name="typeAuteur" ColumnName="typeAuteur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categorie">
+      <EntityTypeMapping TypeName="databaseModel.Categorie">
+        <MappingFragment StoreEntitySet="Categorie">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Livre">
+      <EntityTypeMapping TypeName="databaseModel.Livre">
+        <MappingFragment StoreEntitySet="Livre">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="resume" ColumnName="resume" />
+          <ScalarProperty Name="quantite" ColumnName="quantite" />
+          <ScalarProperty Name="isbn" ColumnName="isbn" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="auteurid" ColumnName="auteurid" />
+          <ScalarProperty Name="categorieid" ColumnName="categorieid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pret">
+      <EntityTypeMapping TypeName="databaseModel.Pret">
+        <MappingFragment StoreEntitySet="Pret">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="datedebut" ColumnName="datedebut" />
+          <ScalarProperty Name="datefin" ColumnName="datefin" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="livreid" ColumnName="livreid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utilisateur">
+      <EntityTypeMapping TypeName="databaseModel.Utilisateur">
+        <MappingFragment StoreEntitySet="Utilisateur">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="sexe" ColumnName="sexe" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="date_nais" ColumnName="date_nais" />
+          <ScalarProperty Name="nomUser" ColumnName="nomUser" />
+          <ScalarProperty Name="motdepasse" ColumnName="motdepasse" />
+          <ScalarProperty Name="typeUser" ColumnName="typeUser" />
+          <ScalarProperty Name="statusCompte" ColumnName="statusCompte" />
+          <ScalarProperty Name="derniereconnexion" ColumnName="derniereconnexion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

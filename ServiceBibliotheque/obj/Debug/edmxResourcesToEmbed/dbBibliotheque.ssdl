@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="databaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Auteur">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="100" />
+    <Property Name="prenom" Type="varchar" MaxLength="100" />
+    <Property Name="sexe" Type="varchar" MaxLength="10" />
+    <Property Name="photo" Type="varchar" MaxLength="255" />
+    <Property Name="email" Type="varchar" MaxLength="255" />
+    <Property Name="date_nais" Type="date" />
+    <Property Name="apropos" Type="text" />
+    <Property Name="nationalite" Type="varchar" MaxLength="50" />
+    <Property Name="typeAuteur" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Categorie">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="100" />
+    <Property Name="description" Type="text" />
+  </EntityType>
+  <EntityType Name="Livre">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titre" Type="varchar" MaxLength="100" />
+    <Property Name="description" Type="text" />
+    <Property Name="resume" Type="varchar" MaxLength="1000" />
+    <Property Name="quantite" Type="int" />
+    <Property Name="isbn" Type="varchar" MaxLength="20" />
+    <Property Name="image" Type="varchar" MaxLength="100" />
+    <Property Name="auteurid" Type="int" />
+    <Property Name="categorieid" Type="int" />
+  </EntityType>
+  <EntityType Name="Pret">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="datedebut" Type="date" />
+    <Property Name="datefin" Type="date" />
+    <Property Name="userid" Type="int" />
+    <Property Name="livreid" Type="int" />
+  </EntityType>
+  <EntityType Name="Utilisateur">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="100" />
+    <Property Name="prenom" Type="varchar" MaxLength="100" />
+    <Property Name="sexe" Type="varchar" MaxLength="5" />
+    <Property Name="photo" Type="varchar" MaxLength="255" />
+    <Property Name="email" Type="varchar" MaxLength="255" />
+    <Property Name="date_nais" Type="date" />
+    <Property Name="nomUser" Type="varchar" MaxLength="100" />
+    <Property Name="motdepasse" Type="varchar" MaxLength="255" />
+    <Property Name="typeUser" Type="varchar" MaxLength="10" />
+    <Property Name="statusCompte" Type="varchar" MaxLength="10" />
+    <Property Name="derniereconnexion" Type="datetime" />
+  </EntityType>
+  <Association Name="fk_categorie_livre">
+    <End Role="Categorie" Type="Self.Categorie" Multiplicity="0..1" />
+    <End Role="Livre" Type="Self.Livre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorie">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Livre">
+        <PropertyRef Name="categorieid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_livre_pret">
+    <End Role="Livre" Type="Self.Livre" Multiplicity="0..1" />
+    <End Role="Pret" Type="Self.Pret" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Livre">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Pret">
+        <PropertyRef Name="livreid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_user_livre">
+    <End Role="Auteur" Type="Self.Auteur" Multiplicity="0..1" />
+    <End Role="Livre" Type="Self.Livre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Auteur">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Livre">
+        <PropertyRef Name="auteurid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_user_pret">
+    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="0..1" />
+    <End Role="Pret" Type="Self.Pret" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilisateur">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Pret">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="databaseModelStoreContainer">
+    <EntitySet Name="Auteur" EntityType="Self.Auteur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categorie" EntityType="Self.Categorie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Livre" EntityType="Self.Livre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pret" EntityType="Self.Pret" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Utilisateur" EntityType="Self.Utilisateur" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_categorie_livre" Association="Self.fk_categorie_livre">
+      <End Role="Categorie" EntitySet="Categorie" />
+      <End Role="Livre" EntitySet="Livre" />
+    </AssociationSet>
+    <AssociationSet Name="fk_livre_pret" Association="Self.fk_livre_pret">
+      <End Role="Livre" EntitySet="Livre" />
+      <End Role="Pret" EntitySet="Pret" />
+    </AssociationSet>
+    <AssociationSet Name="fk_user_livre" Association="Self.fk_user_livre">
+      <End Role="Auteur" EntitySet="Auteur" />
+      <End Role="Livre" EntitySet="Livre" />
+    </AssociationSet>
+    <AssociationSet Name="fk_user_pret" Association="Self.fk_user_pret">
+      <End Role="Utilisateur" EntitySet="Utilisateur" />
+      <End Role="Pret" EntitySet="Pret" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

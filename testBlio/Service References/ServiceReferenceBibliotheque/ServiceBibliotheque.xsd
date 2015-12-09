@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ServiceBibliotheque" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ServiceBibliotheque" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Utilisateur">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Pret" nillable="true" type="tns:ArrayOfPret" />
+      <xs:element minOccurs="0" name="date_nais" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="derniereconnexion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="motdepasse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nomUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="photo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prenom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sexe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="statusCompte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="typeUser" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Utilisateur" nillable="true" type="tns:Utilisateur" />
+  <xs:complexType name="ArrayOfPret">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pret" nillable="true" type="tns:Pret" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPret" nillable="true" type="tns:ArrayOfPret" />
+  <xs:complexType name="Pret">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Livre" nillable="true" type="tns:Livre" />
+      <xs:element minOccurs="0" name="Utilisateur" nillable="true" type="tns:Utilisateur" />
+      <xs:element minOccurs="0" name="datedebut" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="datefin" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="livreid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="userid" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Pret" nillable="true" type="tns:Pret" />
+  <xs:complexType name="Livre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Auteur" nillable="true" type="tns:Auteur" />
+      <xs:element minOccurs="0" name="Categorie" nillable="true" type="tns:Categorie" />
+      <xs:element minOccurs="0" name="Pret" nillable="true" type="tns:ArrayOfPret" />
+      <xs:element minOccurs="0" name="Titre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="auteurid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="categorieid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="isbn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="quantite" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="resume" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Livre" nillable="true" type="tns:Livre" />
+  <xs:complexType name="Auteur">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Livre" nillable="true" type="tns:ArrayOfLivre" />
+      <xs:element minOccurs="0" name="apropos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="date_nais" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="nationalite" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="photo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prenom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sexe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="typeAuteur" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Auteur" nillable="true" type="tns:Auteur" />
+  <xs:complexType name="ArrayOfLivre">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Livre" nillable="true" type="tns:Livre" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLivre" nillable="true" type="tns:ArrayOfLivre" />
+  <xs:complexType name="Categorie">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Livre" nillable="true" type="tns:ArrayOfLivre" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nom" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Categorie" nillable="true" type="tns:Categorie" />
+  <xs:complexType name="ArrayOfUtilisateur">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Utilisateur" nillable="true" type="tns:Utilisateur" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUtilisateur" nillable="true" type="tns:ArrayOfUtilisateur" />
+</xs:schema>

@@ -1,0 +1,8 @@
+C:\Users\diallo\documents\visual studio 2013\Projects\ServiceBibliotheque\ServiceBibliotheque\bin\ServiceBibliotheque.dll.config
+C:\Users\diallo\documents\visual studio 2013\Projects\ServiceBibliotheque\ServiceBibliotheque\bin\ServiceBibliotheque.dll
+C:\Users\diallo\documents\visual studio 2013\Projects\ServiceBibliotheque\ServiceBibliotheque\bin\ServiceBibliotheque.pdb
+C:\Users\diallo\documents\visual studio 2013\Projects\ServiceBibliotheque\ServiceBibliotheque\bin\EntityFramework.dll
+C:\Users\diallo\documents\visual studio 2013\Projects\ServiceBibliotheque\ServiceBibliotheque\bin\EntityFramework.xml
+C:\Users\diallo\documents\visual studio 2013\Projects\ServiceBibliotheque\ServiceBibliotheque\bin\fr\EntityFramework.resources.dll
+C:\Users\diallo\documents\visual studio 2013\Projects\ServiceBibliotheque\ServiceBibliotheque\obj\Debug\ServiceBibliotheque.dll
+C:\Users\diallo\documents\visual studio 2013\Projects\ServiceBibliotheque\ServiceBibliotheque\obj\Debug\ServiceBibliotheque.pdb

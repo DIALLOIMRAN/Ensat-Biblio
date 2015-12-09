@@ -1,0 +1,9 @@
+C:\Users\diallo\documents\visual studio 2013\Projects\ServiceBibliotheque\testBlio\bin\Debug\testBlio.exe.config
+C:\Users\diallo\documents\visual studio 2013\Projects\ServiceBibliotheque\testBlio\bin\Debug\testBlio.exe
+C:\Users\diallo\documents\visual studio 2013\Projects\ServiceBibliotheque\testBlio\bin\Debug\testBlio.pdb
+C:\Users\diallo\documents\visual studio 2013\Projects\ServiceBibliotheque\testBlio\obj\Debug\testBlio.csprojResolveAssemblyReference.cache
+C:\Users\diallo\documents\visual studio 2013\Projects\ServiceBibliotheque\testBlio\obj\Debug\testBlio.Form1.resources
+C:\Users\diallo\documents\visual studio 2013\Projects\ServiceBibliotheque\testBlio\obj\Debug\testBlio.Properties.Resources.resources
+C:\Users\diallo\documents\visual studio 2013\Projects\ServiceBibliotheque\testBlio\obj\Debug\testBlio.csproj.GenerateResource.Cache
+C:\Users\diallo\documents\visual studio 2013\Projects\ServiceBibliotheque\testBlio\obj\Debug\testBlio.exe
+C:\Users\diallo\documents\visual studio 2013\Projects\ServiceBibliotheque\testBlio\obj\Debug\testBlio.pdb

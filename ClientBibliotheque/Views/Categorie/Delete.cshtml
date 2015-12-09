@@ -1,0 +1,42 @@
+﻿@model ClientBibliotheque.ServiceReferenceBibliotheque.Categorie
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content">
+    <div class="col-lg-10 col-lg-offset-1 ">
+        <div class="text-center"> <h2>Suppréssion d'une catégorie</h2></div>
+
+        <h3>Voulez vous vraiment supprimer cette categorie ?</h3>
+        <div>
+            <h4>Categorie : </h4>
+            <hr />
+            <div>
+                
+                <div>
+                    nom :
+                    @Html.DisplayNameFor(model => model.nom)
+                </div>
+                <div>
+                    Déscription :
+                    @Html.DisplayFor(model => model.description)
+                </div>
+
+            </div>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+    <div class="modal">voulez-vous supprimer cette categorie?</div>
+    <div class="clearfix"> </div>
+</div>
+
+

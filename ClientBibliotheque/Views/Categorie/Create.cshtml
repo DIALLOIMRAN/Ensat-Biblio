@@ -1,0 +1,47 @@
+﻿@model ClientBibliotheque.ServiceReferenceBibliotheque.Categorie
+
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content">
+    <div class="col-lg-10 col-lg-offset-1 ">
+        <div class="text-center"><h2>Ajout d'une nouvelle categorie</h2></div>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div>
+                <span>nom <label>*</label></span>
+                @Html.TextBoxFor(model => model.nom, new { @id = "tittle", @class = "form-control", placeholder = "Le titre de la catégorie" })
+
+            </div>
+
+            <div>
+                <span>Déscription</span>
+                <textarea class="form-control text-box multi-line" id="description" name="description" rows="7"> </textarea>
+
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            </div>
+
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
